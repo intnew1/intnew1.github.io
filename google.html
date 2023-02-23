@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="icon" href="./pics/google-icon.jpg">
+    <link rel="stylesheet" href="./google.css">
+</head>
+<body>
+
+    <!-- <header>
+        <nav>
+            <ul class="header-nav">
+                <a href="#">About</a>
+                <a href="#">Store</a>
+            </ul>
+            <ul class="header-nav">
+                <a href="https://mail.google.com/" target="_blank" >Gmail</a>
+                <a href="#">Images</a>
+                <img class="header-img" src="/pics/google-apps.png" alt="google-apps">
+                <img class="header-img" src="./pics/profile-pic.png" alt="profile-pic">
+            </ul>
+        </nav>
+    </header> -->
+
+    <section>
+        <h1>
+            <span style="color: #4285F4;">G</span><span style="color: #DB4437;">o</span><span style="color: #F4B400;">o</span><span style="color: #4285F4;">g</span><span style="color: #0F9D58;">l</span><span style="color: #DB4437;">e</span>
+        </h1>
+        <div class="my-input-container">
+            <img src="./pics/mag-glass.png" alt="mag-glass" width="38px">
+            <!-- <input type="text"> -->
+            <input class="query" type="text" onkeydown="keyDown()" name="search" placeholder="在 Google 上搜索" value="">
+            <img src="./pics/mic-2.png" alt="mic" width="27px" height="41px" >
+        </div>
+        <div class="my-button-container">
+            <button class="searchBtn">Googel Search</button>
+            <button class="searchBtn2">I'm Feeling Lucky</button>
+        </div>
+    </section>
+    
+    <script>
+        let query = document.querySelector('.query');
+        let searchBtn = document.querySelector('.searchBtn');
+        let searchBtn2 = document.querySelector('.searchBtn2');
+
+        searchBtn.onclick = function(){
+            googleSearch();
+        }
+
+        searchBtn2.onclick = function(){
+            baiduSearch();
+        }
+
+        function googleSearch(){
+            let url = 'https://www.google.com/search?q='+query.value;
+            window.open(url,'_self');
+        }
+
+        function baiduSearch(){
+            let url = 'https://www.baidu.com/s?wd='+query.value;
+            window.open(url,'_self');
+        }
+        
+        function keyDown() {
+            var event = window.event || arguments.callee.caller.arguments[0];
+            if (event.keyCode == 13) {//keyCode=13是回车键
+                googleSearch();
+                baiduSearch();
+            }
+        };
+    </script>
+
+    <!-- <footer>
+        <nav id="footer-nav">
+            <ul id="footer-left">
+                <a href="#">Advertising</a>
+                <a href="#">Business</a>
+                <a href="#">How Search works</a>
+            </ul>
+            <ul id="footer-right">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Settings</a>
+            </ul>
+        </nav>
+    </footer> -->
+</body>
+</html>
